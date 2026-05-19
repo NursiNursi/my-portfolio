@@ -1,15 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
-  Boxes,
-  Braces,
+  Atom,
   Database,
-  GitBranch,
+  DatabaseZap,
+  Flame,
   Layers,
-  Package,
+  LayoutGrid,
+  Leaf,
+  Network,
   PenTool,
+  Rabbit,
+  Rocket,
   Server,
+  Shuffle,
+  Smartphone,
+  Terminal,
+  Wind,
+  Workflow,
 } from "lucide-react";
 import { SectionShell } from "@/components/sections/SectionShell";
 
@@ -38,35 +48,61 @@ const SKILLS: SkillCard[] = [
   {
     title: "Backend",
     icon: <Server className="h-5 w-5 text-accent-2" />,
-    items: ["Node.js", "Go", "PostgreSQL"],
+    items: ["Node.js", "Go", "Supabase", "PostgreSQL"],
   },
   {
-    title: "Tools",
-    icon: <Boxes className="h-5 w-5 text-success" />,
-    items: ["Git", "Docker", "Figma"],
+    title: "UI/UX Design",
+    icon: <PenTool className="h-5 w-5 text-success" />,
+    items: ["Figma", "Miro", "Whimsical"],
   },
 ];
 
 const ICONS: Record<string, React.ReactNode> = {
-  React: <Braces className="h-4 w-4" />,
-  "React Native": <Braces className="h-4 w-4" />,
-  Vue: <Braces className="h-4 w-4" />,
-  "Next.js": <Package className="h-4 w-4" />,
-  Nuxt: <Package className="h-4 w-4" />,
-  Tailwind: <Layers className="h-4 w-4" />,
-  Redux: <Database className="h-4 w-4" />,
-  "Tanstack Query": <Database className="h-4 w-4" />,
-  Pinia: <Database className="h-4 w-4" />,
-  "Node.js": <Server className="h-4 w-4" />,
-  Go: <Server className="h-4 w-4" />,
-  "API integration": <Package className="h-4 w-4" />,
+  React: <Atom className="h-4 w-4" />,
+  "React Native": <Smartphone className="h-4 w-4" />,
+  Vue: <Leaf className="h-4 w-4" />,
+  "Next.js": <Rocket className="h-4 w-4" />,
+  Nuxt: <LayoutGrid className="h-4 w-4" />,
+  Tailwind: <Wind className="h-4 w-4" />,
+  Redux: <Shuffle className="h-4 w-4" />,
+  "Tanstack Query": <Network className="h-4 w-4" />,
+  Pinia: <Flame className="h-4 w-4" />,
+  "Node.js": <Terminal className="h-4 w-4" />,
+  Go: <Rabbit className="h-4 w-4" />,
+  Supabase: <DatabaseZap className="h-4 w-4" />,
+  "API integration": <Workflow className="h-4 w-4" />,
   PostgreSQL: <Database className="h-4 w-4" />,
-  Git: <GitBranch className="h-4 w-4" />,
-  Docker: <Boxes className="h-4 w-4" />,
   Figma: <PenTool className="h-4 w-4" />,
+  Miro: <LayoutGrid className="h-4 w-4" />,
+  Whimsical: <Workflow className="h-4 w-4" />,
 };
 
 export function SkillsSection() {
+  const [seed, setSeed] = useState(0);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSeed(Math.floor(Math.random() * 1_000_000));
+  }, []);
+
+  const blurbs: Record<string, string[]> = {
+    Frontend: [
+      "UI engineering with accessibility, performance, and clean architecture.",
+      "Component-driven UIs with consistent spacing, type, and motion.",
+      "Focused on strong DX, predictable state, and fast iterations.",
+    ],
+    Backend: [
+      "Light backend to support the frontend: APIs, data, and integrations.",
+      "Comfortable wiring services, auth flows, and simple databases.",
+      "Practical server work that keeps product UX smooth and reliable.",
+    ],
+    "UI/UX Design": [
+      "Wireframes → high-fidelity screens → developer-ready components.",
+      "Design systems, layout rhythm, and interaction details that convert.",
+      "Clear handoff, reusable patterns, and UX decisions that scale.",
+    ],
+  };
+
   return (
     <SectionShell id="skills" eyebrow="Stack" title="Skills & tools">
       <div className="grid gap-4 md:grid-cols-3">
@@ -102,7 +138,11 @@ export function SkillsSection() {
               ))}
             </div>
             <div className="mt-5 text-xs text-muted">
-              Focused on clean UI systems, good DX, and high performance.
+              {
+                (blurbs[c.title] ?? blurbs.Frontend)[
+                  (seed + idx) % (blurbs[c.title] ?? blurbs.Frontend).length
+                ]
+              }
             </div>
           </motion.div>
         ))}

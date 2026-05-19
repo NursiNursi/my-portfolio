@@ -125,19 +125,31 @@ export const SERVICES: Array<{
   bestFor: string;
 }> = [
   {
-    title: "Landing Pages",
-    points: ["Strong hierarchy", "Fast load", "Clear CTA paths"],
-    bestFor: "Campaigns & product launches",
+    title: "High-Converting Landing Pages",
+    points: [
+      "Strong visual hierarchy",
+      "Fast-loading & SEO-friendly",
+      "Clear conversion-focused CTA flow",
+    ],
+    bestFor: "Dealerships, campaigns & product launches",
   },
   {
-    title: "React / Next.js UI Engineering",
-    points: ["Reusable components", "Clean state patterns", "Accessibility"],
-    bestFor: "SaaS apps & dashboards",
+    title: "Performance & UX Optimization",
+    points: [
+      "Image & rendering optimization",
+      "Smooth animations & interactions",
+      "Mobile-first responsive experience",
+    ],
+    bestFor: "Modern web apps & UX quality improvements",
   },
   {
-    title: "Performance & UX Polish",
-    points: ["Image optimization", "Smooth motion", "Responsive layouts"],
-    bestFor: "Quality upgrades",
+    title: "Business System Development",
+    points: [
+      "Finance & administration systems",
+      "Task & workflow management",
+      "Real-time data-driven interfaces",
+    ],
+    bestFor: "Enterprise & operational platforms",
   },
 ];
 

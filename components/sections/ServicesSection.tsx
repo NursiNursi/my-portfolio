@@ -1,9 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Gauge, LayoutTemplate, Sparkles } from "lucide-react";
 import { SERVICES } from "@/lib/data";
 import { SectionShell } from "@/components/sections/SectionShell";
+
+const SERVICE_SUBTITLES: Record<string, string> = {
+  "High-Converting Landing Pages":
+    "Conversion-first structure: messaging, layout, and CTA flow that drives signups.",
+  "Performance & UX Optimization":
+    "Improve Core Web Vitals, reduce jank, and refine interactions for a smoother UX.",
+  "Business System Development":
+    "Scalable dashboards and workflows with reusable components and data-ready UI.",
+};
+
+const SERVICE_ICONS: Record<string, React.ReactNode> = {
+  "High-Converting Landing Pages": (
+    <LayoutTemplate className="h-5 w-5 text-accent" />
+  ),
+  "Performance & UX Optimization": <Gauge className="h-5 w-5 text-accent-2" />,
+  "Business System Development": <Sparkles className="h-5 w-5 text-success" />,
+};
 
 export function ServicesSection() {
   return (
@@ -21,7 +38,9 @@ export function ServicesSection() {
           >
             <div className="flex items-center gap-3">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-surface-2">
-                <Sparkles className="h-5 w-5 text-accent" />
+                {SERVICE_ICONS[s.title] ?? (
+                  <Sparkles className="h-5 w-5 text-accent" />
+                )}
               </span>
               <div>
                 <div className="text-sm font-semibold text-fg">{s.title}</div>
@@ -40,8 +59,8 @@ export function ServicesSection() {
             </ul>
             <div className="mt-5 h-px w-full bg-border/80" />
             <div className="mt-4 text-xs text-muted">
-              Built with clean components, responsive layouts, and subtle
-              motion.
+              {SERVICE_SUBTITLES[s.title] ??
+                "Built with clean components, responsive layouts, and subtle motion."}
             </div>
             <div className="pointer-events-none absolute opacity-0 transition-opacity group-hover:opacity-100" />
           </motion.div>
