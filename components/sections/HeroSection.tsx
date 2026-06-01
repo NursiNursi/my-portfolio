@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Code, Link as LinkIcon, Mail } from "lucide-react";
+import { ArrowRight, Code, Download, Link as LinkIcon, Mail } from "lucide-react";
 import { SITE_LINKS } from "@/lib/site";
 import { useTypewriter } from "@/lib/useTypewriter";
 import Link from "next/link";
+
+const cvHref = "/files/CV_Muhamad%20Nursi%20Ramdan_English.pdf";
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -55,6 +57,14 @@ export function HeroSection() {
               >
                 Contact Me
               </Link>
+              <a
+                href={cvHref}
+                download
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-semibold text-fg transition-colors hover:bg-surface-2"
+              >
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">

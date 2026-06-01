@@ -3,9 +3,11 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Code, Link as LinkIcon, Mail, Send } from "lucide-react";
+import { Code, Download, Link as LinkIcon, Mail, Send } from "lucide-react";
 import { SectionShell } from "@/components/sections/SectionShell";
 import { SITE_LINKS } from "@/lib/site";
+
+const cvHref = "/files/CV_Muhamad%20Nursi%20Ramdan_English.pdf";
 
 type FormState = {
   name: string;
@@ -102,6 +104,14 @@ export function ContactSection() {
               >
                 <Mail className="h-4 w-4" />
                 {SITE_LINKS.email}
+              </a>
+              <a
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-fg hover:bg-surface"
+                href={cvHref}
+                download
+              >
+                <Download className="h-4 w-4" />
+                Download CV
               </a>
               <a
                 className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-fg hover:bg-surface"
