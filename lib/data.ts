@@ -55,13 +55,13 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: "",
     repoUrl: "",
-    imageUrl: "/projects/cms-dashboard.png",
+    imageUrl: "/projects/dci-cms.png",
     role: "Frontend Developer",
     period: "Sep 2023 — Oct 2024",
     status: "Production",
     stack: ["React.js", "Next.js", "Tailwind", "TanStack Query", "TypeScript"],
     gallery: [
-      { src: "/projects/cms-dashboard.png", alt: "CMS dashboard overview" },
+      { src: "/projects/dci-cms.png", alt: "CMS dashboard overview" },
       {
         src: makeAiImageUrl(
           "modern CMS content editor UI, split-pane editor and live preview, dark mode, blue purple accents, clean SaaS, high detail",
