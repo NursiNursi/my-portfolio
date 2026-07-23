@@ -40,7 +40,7 @@ export type ExperienceItem = {
 export const PROJECTS: Project[] = [
   {
     slug: "cms-platform",
-    name: "CMS Platform",
+    name: "Data Center Indonesia CMS Platform",
     summary: "Role-based content management with blazing-fast editorial UX.",
     description:
       "A CMS platform built for speed and clarity: structured content, live previews, and reusable blocks. Designed to keep editors productive while maintaining a clean, component-driven frontend architecture.",
@@ -444,7 +444,7 @@ export const PROJECTS: Project[] = [
     name: "UI/UX Case Study",
     summary: "Data-rich dashboard with responsive layout and accessible UI.",
     description:
-      "A dashboard app focused on clarity: responsive grids, readable charts placeholders, and accessible interactions. Built with reusable components and smooth, non-distracting animations.",
+      "A mobile app focused on clarity: responsive grids, readable charts placeholders, and accessible interactions. Built with reusable components and smooth, non-distracting animations.",
     outcome: "Enhanced user trust and providing value-added services.",
     tech: ["Figma", "Miro", "Whimsical"],
     liveUrl:

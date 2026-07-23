@@ -53,7 +53,7 @@ export function ProjectsSection() {
 
             <div className="p-5">
               <div className="text-sm font-semibold text-fg/90">{p.name}</div>
-              <p className="text-sm leading-6 text-fg/90">{p.outcome}</p>
+              <p className="text-sm leading-6 text-fg/90">{p.description}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.tech.map((t) => (
                   <span
