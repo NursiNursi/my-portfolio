@@ -143,10 +143,10 @@ export function HeroSection() {
                     </motion.div>
                     <div className="mt-5 w-full rounded-2xl border border-border bg-surface-2 px-4 py-3">
                       <div className="text-sm font-semibold text-fg">
-                        Frontend Engineering
+                        Frontend Specialist
                       </div>
                       <div className="mt-1 text-sm text-muted">
-                        ReactJS • Next.js • Performance • Scalable UI
+                        ReactJS • Next.js • React Native • VueJS • UI/UX Design
                       </div>
                     </div>
                   </motion.div>

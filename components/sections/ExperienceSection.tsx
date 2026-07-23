@@ -7,7 +7,7 @@ import { EXPERIENCE } from "@/lib/data";
 export function ExperienceSection() {
   return (
     <SectionShell id="experience" eyebrow="Career" title="Experience">
-      <div className="relative rounded-2xl border border-border bg-surface p-6 shadow-[var(--shadow)]">
+      <div className="relative rounded-2xl border border-border bg-surface py-12 pl-8 shadow-[var(--shadow)]">
         <div className="absolute left-7 top-6 bottom-6 hidden w-px bg-border md:block" />
         <motion.div
           className="absolute left-7 top-6 hidden w-px bg-gradient-to-b from-accent via-accent-2 to-transparent md:block"
