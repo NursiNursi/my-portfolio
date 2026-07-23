@@ -201,6 +201,358 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    slug: "whatsapp-automation-platform",
+    name: "WhatsApp Messaging & Automation Suite",
+    summary:
+      "Automated broadcast campaigns, drip messaging, and live agent handoff.",
+    description:
+      "An enterprise WhatsApp automation dashboard built for high-throughput customer engagement. Features a drag-and-drop flow builder, template management, real-time message tracking, and seamless live-agent inbox handoff.",
+    outcome:
+      "Automated 70% of inbound customer queries and streamlined bulk outreach campaigns.",
+    tech: ["ReactJS", "Redux Toolkit", "Material UI", "Axios", "WebSocket"],
+    liveUrl: "",
+    repoUrl: "",
+    imageUrl: "/projects/whatsapp-automation.png",
+    role: "Frontend Developer",
+    period: "Sep 2023 — Oct 2024",
+    status: "Production",
+    stack: ["ReactJS", "Redux Toolkit", "Material UI", "Axios", "JavaScript"],
+    gallery: [
+      {
+        src: "/projects/whatsapp-automation.png",
+        alt: "WhatsApp automation dashboard overview",
+      },
+      {
+        src: makeAiImageUrl(
+          "modern WhatsApp broadcast campaign builder UI, message scheduling table, dark mode, Material UI, teal and green accents, sleek SaaS, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Broadcast campaign manager",
+      },
+      {
+        src: makeAiImageUrl(
+          "chatbot visual flow builder node graph UI, dark SaaS interface, connected conversation nodes, green blue accents, Material UI, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Visual automated flow builder",
+      },
+      {
+        src: makeAiImageUrl(
+          "realtime chat inbox multi agent interface UI, WhatsApp green themes, conversation queue, sidebar customer details, Material UI, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Multi-agent unified live inbox",
+      },
+      {
+        src: makeAiImageUrl(
+          "WhatsApp message delivery analytics dashboard UI, delivery rate charts, read receipts metrics, dark mode, green accent, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Messaging performance analytics",
+      },
+    ],
+    overview: [
+      "A comprehensive WhatsApp automation platform designed to help marketing and support teams automate customer conversations and manage high-volume broadcasts.",
+      "Businesses can build automated drip campaigns, send personalized notifications via WhatsApp Business API, and seamlessly transition complex queries to human agents.",
+      "Focused on state management reliability using Redux Toolkit to handle live chat threads, real-time message statuses, and dynamic workflow builders.",
+    ],
+    problem: [
+      "Manual messaging outreach was unscalable, leading to high response times and lost customer leads.",
+      "Teams struggled with synchronizing state across multiple support agents handling the same WhatsApp Business account.",
+      "Managing rich interactive messages, variable templates, and delivery status tracking (sent, delivered, read) lacked a central interface.",
+    ],
+    solution: [
+      "Built a central multi-agent inbox powered by Redux Toolkit for real-time thread updates and agent assignments.",
+      "Created an intuitive template manager with dynamic variables, interactive buttons, and real-time preview.",
+      "Integrated Axios interceptors and centralized API management for handling bulk media uploads and status polling smoothly.",
+    ],
+    contributions: [
+      "Architected the Redux Toolkit store sliced by conversations, campaign state, and user permissions for efficient global state access.",
+      "Created custom Material UI components and theme overrides tailored for chat interfaces and automation node maps.",
+      "Configured Axios instance with request/response interceptors to handle token refreshes, error toasts, and file upload progress.",
+      "Optimized heavy chat thread rendering using windowing/virtualization techniques to prevent UI freeze on large message histories.",
+    ],
+    features: [
+      {
+        title: "Automated Flow Builder",
+        description:
+          "Design auto-responder flows and keyphrase triggers without writing code.",
+        icon: "Workflow",
+      },
+      {
+        title: "Multi-Agent Live Inbox",
+        description:
+          "Unified inbox with agent assignment, internal notes, and real-time status updates.",
+        icon: "MessageSquare",
+      },
+      {
+        title: "Broadcast Campaigns",
+        description:
+          "Schedule bulk WhatsApp messages with dynamic tag insertion and audience segmentation.",
+        icon: "Send",
+      },
+      {
+        title: "Template Management",
+        description:
+          "Submit, validate, and preview WhatsApp Business HSM templates directly from the UI.",
+        icon: "FileText",
+      },
+      {
+        title: "Real-time Analytics",
+        description:
+          "Track delivery rates, open rates, response times, and bot deflection metrics.",
+        icon: "BarChart3",
+      },
+      {
+        title: "Contact Segmentation",
+        description:
+          "Organize contacts with custom tags, attributes, and automated import/export tools.",
+        icon: "Users",
+      },
+    ],
+    technical: {
+      architecture: [
+        "Frontend (React.js + Material UI)",
+        "State Management (Redux Toolkit + RTK Query)",
+        "HTTP Client (Axios)",
+        "WhatsApp Business API Gateways",
+      ],
+      frontend: [
+        "Framework: React.js with modular component organization",
+        "State: Redux Toolkit for complex relational chat state and campaign builders",
+        "UI: Material UI (MUI v5) custom theme and styled components",
+        "Data: Axios for REST API calls with request queueing and response normalization",
+      ],
+      performance: [
+        "Virtualization for rendering thousands of chat logs without DOM bloat",
+        "Redux selector memoization (Reselect) to avoid expensive recalculations on incoming messages",
+        "Axios request cancellation (CancelToken/AbortController) on rapid navigation/filtering",
+      ],
+    },
+    challenges: [
+      {
+        challenge:
+          "Managing frequent WebSocket/real-time state updates in a large inbox without UI jitter.",
+        solution:
+          "Utilized Redux Toolkit normalized slices and batched state dispatches to keep incoming message rendering smooth.",
+      },
+      {
+        challenge:
+          "Handling complex form validation for dynamic WhatsApp templates (variables, buttons, media headers).",
+        solution:
+          "Built controlled custom Material UI form steps with granular state management and real-time preview feedback.",
+      },
+    ],
+    impact: [
+      {
+        label: "Higher response speed",
+        value: "80% reduction in initial customer wait times",
+      },
+      {
+        label: "Better agent capacity",
+        value: "3x increase in queries handled per agent",
+      },
+      {
+        label: "Campaign efficiency",
+        value: "95%+ delivery success on bulk broadcast campaigns",
+      },
+      {
+        label: "Reduced support costs",
+        value: "70% automated resolution via bot flows",
+      },
+    ],
+    lessons: [
+      "Structuring complex Redux state for enterprise chat applications",
+      "Maximizing Material UI component customization while keeping bundle size lean",
+      "Handling real-time async side-effects gracefully with Redux and Axios",
+      "Optimizing heavy list rendering in real-time messaging apps",
+    ],
+  },
+
+  {
+    slug: "wealth-management-system",
+    name: "Enterprise Wealth Management CRM",
+    summary:
+      "Comprehensive FX transaction processing and Market-Linked Deposit management.",
+    description:
+      "An enterprise-grade financial CRM engineered for relationship managers to execute foreign exchange (FX) deals, structure Market-Linked Deposit (MLD) portfolios, and track client wealth metrics in real time with high availability.",
+    outcome:
+      "Accelerated FX order execution speeds and streamlined regulatory compliance workflows for high-net-worth portfolio management.",
+    tech: [
+      "ReactJS",
+      "Redux Toolkit",
+      "Material UI",
+      "Axios",
+      "Microservice",
+      "Azure",
+    ],
+    liveUrl: "",
+    repoUrl: "",
+    imageUrl: "/projects/wealth-management.png",
+    role: "Frontend Developer",
+    period: "Nov 2024 — Present",
+    status: "Production",
+    stack: [
+      "ReactJS",
+      "Redux Toolkit",
+      "Material UI",
+      "Axios",
+      "Azure Services",
+    ],
+    gallery: [
+      {
+        src: "/projects/wealth-management.png",
+        alt: "Wealth Management CRM dashboard overview",
+      },
+      {
+        src: makeAiImageUrl(
+          "financial wealth management CRM dashboard UI, FX foreign exchange trading order book, dark mode, Material UI, navy blue and gold accents, high detail enterprise SaaS",
+          "landscape_16_9",
+        ),
+        alt: "Foreign exchange trading terminal view",
+      },
+      {
+        src: makeAiImageUrl(
+          "market linked deposit yield calculator UI, financial charts and structured product portfolios, dark enterprise theme, Material UI, gold accents, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Market-Linked Deposit structuring tool",
+      },
+      {
+        src: makeAiImageUrl(
+          "wealth management client portfolio summary UI, asset allocation charts, regulatory compliance checklist, dark mode, Material UI, high detail",
+          "landscape_16_9",
+        ),
+        alt: "Client portfolio and compliance overview",
+      },
+      {
+        src: makeAiImageUrl(
+          "financial CRM relationship manager task view, FX rate alert triggers, dark mode, gold accents, high detail",
+          "portrait_16_9",
+        ),
+        alt: "Relationship manager activity center",
+      },
+    ],
+    overview: [
+      "A specialized CRM built for wealth management teams to manage high-net-worth client accounts, execute FX spot/forward contracts, and configure Market-Linked Deposits.",
+      "Integrated with cloud-native microservices on Azure to consume streaming FX spot rates, validate transaction limits, and process settlement pipelines securely.",
+      "Engineered with Redux Toolkit to maintain complex transactional states, active rate lock timers, and dynamic multi-currency calculations across client portfolios.",
+    ],
+    problem: [
+      "Legacy monolithic CRM systems were slow at fetching real-time FX rates, causing order slippage during market volatility.",
+      "Structuring Market-Linked Deposits required fragmented manual calculations across spread sheets, increasing operational risk.",
+      "Tightly coupled services led to poor fault tolerance during peak market trading hours.",
+    ],
+    solution: [
+      "Built a modular React frontend connecting directly to microservice APIs hosted on Azure, isolating market data streams from trade execution.",
+      "Created automated Market-Linked Deposit calculator and booking widgets with strict client risk-profile validation.",
+      "Utilized Redux for predictable, centralized state management across multi-tab trade workflows and rate lock countdowns.",
+    ],
+    contributions: [
+      "Designed scalable Redux slices to manage streaming FX exchange rates, trade session tokens, and order state machines.",
+      "Constructed complex Material UI financial tables and booking forms tailored with custom validation logic and currency formatters.",
+      "Configured Axios clients to interact with distinct Azure API API Management (APIM) microservice gateways with OAuth2 token handling.",
+      "Deployed build artifacts and static assets to Azure Static Web Apps integrated with Azure Pipelines for continuous integration.",
+    ],
+    features: [
+      {
+        title: "FX Trading Terminal",
+        description:
+          "Real-time spot/forward foreign exchange booking with live rate locking and spread controls.",
+        icon: "TrendingUp",
+      },
+      {
+        title: "MLD Structuring Engine",
+        description:
+          "Configure Market-Linked Deposit terms, index benchmarks, and payout scenario simulations.",
+        icon: "PieChart",
+      },
+      {
+        title: "Client 360 View",
+        description:
+          "Unified view of total assets under management (AUM), risk profile status, and cross-currency holdings.",
+        icon: "UserCheck",
+      },
+      {
+        title: "Microservice Sync",
+        description:
+          "Decoupled integration with core banking, rate engine, and audit log microservices via Azure.",
+        icon: "Server",
+      },
+      {
+        title: "Compliance & Audit Trail",
+        description:
+          "Automated suitability checks and immutable deal activity logs for regulatory verification.",
+        icon: "ShieldCheck",
+      },
+      {
+        title: "Rate Alert System",
+        description:
+          "Customizable exchange rate triggers and notifications for proactive relationship management.",
+        icon: "Bell",
+      },
+    ],
+    technical: {
+      architecture: [
+        "Frontend (React.js + Material UI)",
+        "Global State (Redux Toolkit)",
+        "Cloud Infrastructure (Azure Web Apps / Azure APIM)",
+        "Backend (Microservice Architecture via Azure Kubernetes Service)",
+      ],
+      frontend: [
+        "Framework: React.js structured around feature-based domain modules",
+        "State: Redux Toolkit for rate streaming state, active deals, and portfolio filters",
+        "UI: Material UI customized for high-density financial data displays and dark mode",
+        "API Layer: Axios instances mapped to individual Azure microservice endpoints",
+      ],
+      performance: [
+        "Redux selector memoization for instantaneous recalculation of multi-currency totals",
+        "Optimized Azure CDN caching strategy for frontend static assets",
+        "Debounced user inputs on high-frequency market scenario calculators to minimize CPU load",
+      ],
+    },
+    challenges: [
+      {
+        challenge:
+          "Handling real-time FX rate volatility while a relationship manager is actively filling out a trade order.",
+        solution:
+          "Implemented a Redux-driven rate-lock timer module with Axios request retries that cleanly locks or updates prices upon user confirmation.",
+      },
+      {
+        challenge:
+          "Integrating front-end routes smoothly with multiple independently deployed backend microservices on Azure.",
+        solution:
+          "Standardized Axios base paths using Azure API Management routing and unified response handling middleware.",
+      },
+    ],
+    impact: [
+      {
+        label: "Execution speed",
+        value: "60% faster deal processing for FX orders",
+      },
+      {
+        label: "High Availability",
+        value: "99.9% system uptime powered by Azure microservices",
+      },
+      {
+        label: "Operational Efficiency",
+        value: "Eliminated manual calculation errors on MLD bookings",
+      },
+      {
+        label: "AUM Growth",
+        value:
+          "Streamlined portfolio management across multi-currency accounts",
+      },
+    ],
+    lessons: [
+      "State architecture patterns for multi-step financial booking engines in Redux",
+      "Designing frontend apps to interface seamlessly with Azure microservice environments",
+      "Building high-density, accessible financial UIs using Material UI components",
+      "Managing asynchronous order execution flows securely using Axios",
+    ],
+  },
+
+  {
     slug: "landing-page",
     name: "Auto Commerce Platform",
     summary: "Conversion-first landing experience with polished motion design.",
@@ -446,7 +798,13 @@ export const PROJECTS: Project[] = [
     description:
       "A mobile app focused on clarity: responsive grids, readable charts placeholders, and accessible interactions. Built with reusable components and smooth, non-distracting animations.",
     outcome: "Enhanced user trust and providing value-added services.",
-    tech: ["Figma", "Miro", "Whimsical"],
+    tech: [
+      "Figma",
+      "Miro",
+      "Whimsical",
+      "Usability testing",
+      "Qualitative Analysis",
+    ],
     liveUrl:
       "https://drive.google.com/file/d/1gBZaNeDnwSJM2sD-ioDZYuYViZsmJqY6/view?usp=sharing",
     repoUrl: "",
